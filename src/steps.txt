@@ -1,0 +1,64 @@
+Create actions folder
+in this create index.js
+
+in this we will write all actions
+
+* create reducers folder and in this
+  we will create incDec.js for reducer.
+
+  now we will make the basic ui
+
+*Now we have created index.js in actions folder so in that we will create actions for increment and decrement.
+
+*Now in reducer in incNum we will write logic
+
+* Create index.js in reducer for the rootReducer and we will use combineReducer() to combine all reducers.
+
+* Now we have to add everything in store.
+so we will create store.js in src.
+
+and in this 1st we will import createStore
+and rootReducer bcz the whole data will be in rootReducer
+
+now create the store  
+and for devTools paste this code there  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+
+
+and in main index.js 
+store.subscribe(() => console.log(store.getState()));
+
+
+Now in index.js main file
+
+we have to provide store to all the app, so any component can use that.
+
+so we will import Provider
+
+and wrap App in it and we'll pass store to it.
+
+**
+Now we want to show the data on ui
+
+so we have to get the data from store.
+
+so we have useSelector hook
+
+const state = useSelector((state) => state.changeTheNum)
+//changeTheNum is in incDec
+
+console the state to see what we got.
+
+then we want to triger the actions on clicking of the buttons
+
+so we will import the actions.
+
+and we will use useDispatch to trigger the actions ;
+
+then action will call the reducer fn
+
+const dispatch = useDispatch()
+
+dispatch(incNum()) // onclick of increment
+dispatch(decNum()) // onclick of decrement
+
+
